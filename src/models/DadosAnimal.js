@@ -15,10 +15,9 @@ class DadosAnimal extends Model {
         })
 
     }
-    static associate(models) {
-        this.belongsTo(models.Usuario, { foreignKey: 'id_user', as: 'Owner' })
+    //static associate(models) {
+        //this.belongsTo(models.Usuario, { foreignKey: 'id_user', as: 'Owner' })
     }
 
-}
 
 module.exports = DadosAnimal;

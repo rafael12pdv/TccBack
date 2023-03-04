@@ -12,12 +12,12 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      id_users: {
+      /*id_users: {
         type: Sequelize.INTEGER,
-        references: {model: 'usuarios', key: 'id_user' },
+        //references: {model: 'usuarios', key: 'id_user' },
         onUpdate:'CASCADE',
         onDelete:'CASCADE'
-      },
+      },*/
       nome: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -31,7 +31,7 @@ module.exports = {
         allowNull: false,
       },
       data_nascimento: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       origem: {

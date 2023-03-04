@@ -1,13 +1,21 @@
 const express = require('express');
-const CadastroController = require('./controllers/UsuarioController');
+const UsuarioController = require('./controllers/UsuarioController');
 const DadosAnimalController = require ('./controllers/DadosAnimalController');
+const DadosProducaoController = require ('./controllers/DadosProducaoController');
+const DadosSanitarioController = require ('./controllers/DadosSanitarioController');
 const routes = express.Router();
 
-routes.get('/Usuarios', CadastroController.index);
-routes.post('/Usuarios', CadastroController.store);
+routes.get('/Usuario', UsuarioController.index);
+routes.post('/Usuario', UsuarioController.store);
 
 routes.get('/DadosAnimal', DadosAnimalController.index);
 routes.post('/DadosAnimal', DadosAnimalController.store);
+
+routes.get('/DadosProducao', DadosProducaoController.index);
+routes.post('/DadosProducao', DadosProducaoController.store);
+
+routes.get('/DadosSanitario', DadosSanitarioController.index);
+routes.post('/DadosSanitario', DadosSanitarioController.store);
 
 
 module.exports = routes;
