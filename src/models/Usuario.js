@@ -1,8 +1,9 @@
 const {Model, DataTypes} =  require('sequelize');
 
-class Cadastro extends Model {
+class Usuario extends Model {
     static init(sequelize){
         super.init({
+            id_user: DataTypes.INTEGER,
             numero_ima: DataTypes.INTEGER,
             inscricao_estadual: DataTypes.INTEGER,
             nome: DataTypes.STRING,
@@ -16,4 +17,4 @@ class Cadastro extends Model {
     }
 }
 
-module.exports = Cadastro;
+module.exports = Usuario;

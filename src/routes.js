@@ -1,14 +1,13 @@
 const express = require('express');
-const CadastroController = require('./controllers/CadastroController');
-const UserController = require('./controllers/UserController');
+const CadastroController = require('./controllers/UsuarioController');
+const DadosAnimalController = require ('./controllers/DadosAnimalController');
 const routes = express.Router();
 
-routes.get('/users', UserController.index);
-routes.post('/users', UserController.store);
+routes.get('/Usuarios', CadastroController.index);
+routes.post('/Usuarios', CadastroController.store);
 
-
-routes.get('/cadastros', CadastroController.index);
-routes.post('/cadastros', CadastroController.store);
+routes.get('/DadosAnimal', DadosAnimalController.index);
+routes.post('/DadosAnimal', DadosAnimalController.store);
 
 
 module.exports = routes;

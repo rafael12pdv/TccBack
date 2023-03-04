@@ -1,10 +1,10 @@
-const Cadastro = require('../models/Cadastro')
+const Usuario = require('../models/Usuario')
 
 module.exports = {
 
     async index(req, res) {
-        const cadastro = await Cadastro.findAll();
-        return res.json(cadastro);
+        const usuarios = await Usuario.findAll();
+        return res.json(usuarios);
     },
     async store(req, res) {
         const {
@@ -17,7 +17,7 @@ module.exports = {
             confirma_senha
         } = req.body;
 
-        const cadastro = await Cadastro.create({
+        const usuarios = await Usuario.create({
             numero_ima,
             inscricao_estadual,
             nome,
@@ -27,7 +27,7 @@ module.exports = {
             confirma_senha
         });
 
-        return res.json(cadastro);
+        return res.json(usuarios);
 
     }
 };

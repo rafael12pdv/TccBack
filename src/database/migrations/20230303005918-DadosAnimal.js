@@ -1,9 +1,11 @@
 'use strict';
 
+//const Usuario = require('../../models/Usuario');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('usuarios', {
+  async up (queryInterface, Sequelize) {
+    await queryInterface.createTable('dados_animals', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -12,39 +14,38 @@ module.exports = {
       },
       id_users: {
         type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      numero_ima: {
-        type: Sequelize.INTEGER,
-      },
-      inscricao_estadual: {
-        type: Sequelize.INTEGER,
+        references: {model: 'usuarios', key: 'id_user' },
+        onUpdate:'CASCADE',
+        onDelete:'CASCADE'
       },
       nome: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      nome_propiedade: {
+      sexo:{
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+      raca: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
+      data_nascimento: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      origem: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      senha: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      confirma_senha: {
+      guia_animal: {
         type: Sequelize.STRING,
         allowNull: false,
       }
+  });
+},
 
-    });
-  },
-
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('usuarios');
-  }
+async down(queryInterface, Sequelize) {
+  await queryInterface.dropTable('dados_animals');
+}
 };

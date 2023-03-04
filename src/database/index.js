@@ -1,10 +1,11 @@
 const Sequelize  = require('sequelize');
 const dbConfig = require('../config/database');
-const User = require('../models/User');
-const Cadastro = require('../models/Cadastro');
+const Usuario = require('../models/Usuario');
+const DadosAnimal = require('../models/DadosAnimal');
 const connection = new Sequelize(dbConfig);
 
-User.init(connection);
-Cadastro.init(connection);
+Usuario.init(connection);
+DadosAnimal.init(connection);
+DadosAnimal.associate(connection.models)
 
 module.exports = connection;
