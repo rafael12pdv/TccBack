@@ -11,14 +11,16 @@ module.exports = {
             nome,
             quantidade_de_litros,
             data_coleta,
-            observacao
+            observacao,
+            id_animal
         } = req.body;
 
         const dados_producoes = await DadosProducao.create({
             nome,
             quantidade_de_litros,
             data_coleta,
-            observacao
+            observacao,
+            id_animal
         });
 
         return res.json(dados_producoes);

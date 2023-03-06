@@ -13,7 +13,8 @@ module.exports = {
             nome_medicacao,
             dose_utilizada,
             preco,
-            data_aplicacao
+            data_aplicacao,
+            id_animal
         } = req.body;
 
         const dados_sanitario = await DadosProducao.create({
@@ -22,7 +23,8 @@ module.exports = {
             nome_medicacao,
             dose_utilizada,
             preco,
-            data_aplicacao
+            data_aplicacao,
+            id_animal
         });
 
         return res.json(dados_sanitario);

@@ -10,10 +10,6 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      id_users: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
       numero_ima: {
         type: Sequelize.INTEGER,
       },

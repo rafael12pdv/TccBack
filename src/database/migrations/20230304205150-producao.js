@@ -10,6 +10,10 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      id_animal: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       nome: {
         type: Sequelize.STRING,
         allowNull: false,

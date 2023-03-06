@@ -4,7 +4,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.createTable('dados_animals', {
       id: {
         type: Sequelize.INTEGER,
@@ -12,17 +12,11 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      /*id_users: {
-        type: Sequelize.INTEGER,
-        //references: {model: 'usuarios', key: 'id_user' },
-        onUpdate:'CASCADE',
-        onDelete:'CASCADE'
-      },*/
       nome: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      sexo:{
+      sexo: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
@@ -42,10 +36,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       }
-  });
-},
+    });
+  },
 
-async down(queryInterface, Sequelize) {
-  await queryInterface.dropTable('dados_animals');
-}
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('dados_animals');
+  }
 };
