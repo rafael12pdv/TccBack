@@ -3,6 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class DadosAnimal extends Model {
     static init(sequelize) {
         super.init({
+            id_user: DataTypes.INTEGER,
             nome: DataTypes.STRING,
             sexo: DataTypes.BOOLEAN,
             raca: DataTypes.STRING,

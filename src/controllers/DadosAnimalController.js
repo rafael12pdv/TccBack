@@ -1,5 +1,4 @@
 const DadosAnimal = require('../models/DadosAnimal');
-const Usuario = require('../models/Usuario');
 
 module.exports = {
 
@@ -8,8 +7,9 @@ module.exports = {
         return res.json(dados_animal);
     },
     async store(req, res) {
-        const {id_user} = req.body;
+
         const {
+            id_user,
             nome,
             sexo,
             raca,
@@ -17,12 +17,10 @@ module.exports = {
             origem,
             guia_animal
         } = req.body;
-        const usuario = await Usuario.findByPk(id_user);
-        if (!usuario){
-            return res.status(400).json({error:'Usuario não encontrado'})
-        }
-        
+
+
         const dados_animal = await DadosAnimal.create({
+            id_user,
             nome,
             sexo,
             raca,

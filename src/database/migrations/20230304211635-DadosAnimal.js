@@ -12,6 +12,10 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
+      id_user: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       nome: {
         type: Sequelize.STRING,
         allowNull: false,

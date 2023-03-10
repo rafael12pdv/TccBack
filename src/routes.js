@@ -8,6 +8,7 @@ const routes = express.Router();
 routes.get('/Usuario', UsuarioController.index);
 routes.post('/Usuario', UsuarioController.store);
 routes.post('/UsuarioValida', UsuarioController.validaEmail);
+routes.get('/getUserbyId/:id', UsuarioController.getUserbyId);
 
 routes.get('/DadosAnimal', DadosAnimalController.index);
 routes.post('/DadosAnimal', DadosAnimalController.store);

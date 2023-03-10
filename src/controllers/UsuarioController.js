@@ -2,7 +2,9 @@ const {
     where
 } = require('sequelize');
 const Usuario = require('../models/Usuario')
-const { Op } = require('sequelize');
+const {
+    Op
+} = require('sequelize');
 
 module.exports = {
 
@@ -34,6 +36,19 @@ module.exports = {
         } catch (error) {
             return res.status(500).json({
                 message: "Erro ao validar email"
+            });
+        }
+    },
+
+    async getUserbyId(req, res) {
+        const {id} = req.params
+        const user = await Usuario.findByPk(id)
+        if(user){
+           
+            return res.json(user);
+        } else {
+            return res.status(500).json({
+                message: "Usuário não encontrado!"
             });
         }
     },
