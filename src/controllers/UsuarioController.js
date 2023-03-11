@@ -26,7 +26,7 @@ module.exports = {
 
             if (usuario) {
                 return res.status(200).json({
-                    message: "Email válido"
+                  usuario
                 });
             } else {
                 return res.status(400).json({
