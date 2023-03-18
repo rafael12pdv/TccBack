@@ -16,6 +16,7 @@ routes.delete('/DadosAnimal/:id', DadosAnimalController.deleteAnimalById);
 
 routes.get('/DadosProducao', DadosProducaoController.index);
 routes.post('/DadosProducao', DadosProducaoController.store);
+routes.delete('/DadosProducaoDelete/:id', DadosProducaoController.deleteProducaoById)
 
 routes.get('/DadosSanitario', DadosSanitarioController.index);
 routes.post('/DadosSanitario', DadosSanitarioController.store);

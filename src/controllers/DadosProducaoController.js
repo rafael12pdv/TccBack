@@ -6,6 +6,21 @@ module.exports = {
         const dados_producoes = await DadosProducao.findAll();
         return res.json(dados_producoes);
     },
+
+    async deleteProducaoById(req, res) {
+        const {id} = req.params
+        const dados_producoes = await DadosProducao.findByPk(id)
+        if(dados_producoes){
+           await dados_producoes.destroy()
+            return res.status(200).json({
+                message: "Deletado!"
+            });
+        } else {
+            return res.status(500).json({
+                message: "Dado não encontrado!"
+            });
+        }
+    },
     async store(req, res) {
         const {
             nome,
