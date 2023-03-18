@@ -1,9 +1,9 @@
-const DadosProducao = require('../models/DadosProducao')
+const DadosSanitario = require('../models/DadosSanitario')
 
 module.exports = {
 
     async index(req, res) {
-        const dados_sanitario = await DadosProducao.findAll();
+        const dados_sanitario = await DadosSanitario.findAll();
         return res.json(dados_sanitario);
     },
     async store(req, res) {
@@ -17,7 +17,7 @@ module.exports = {
             id_animal
         } = req.body;
 
-        const dados_sanitario = await DadosProducao.create({
+        const dados_sanitario = await DadosSanitario.create({
             nome,
             numero_nf,
             nome_medicacao,
