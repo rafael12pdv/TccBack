@@ -13,6 +13,7 @@ routes.get('/getUserbyId/:id', UsuarioController.getUserbyId);
 routes.get('/DadosAnimal', DadosAnimalController.index);
 routes.post('/DadosAnimal', DadosAnimalController.store);
 routes.delete('/DadosAnimal/:id', DadosAnimalController.deleteAnimalById);
+routes.put('/DadosAnnimalUpdate/:id', DadosAnimalController.updateAnimal)
 
 routes.get('/DadosProducao', DadosProducaoController.index);
 routes.post('/DadosProducao', DadosProducaoController.store);
