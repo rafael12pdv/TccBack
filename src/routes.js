@@ -21,6 +21,7 @@ routes.delete('/DadosProducaoDelete/:id', DadosProducaoController.deleteProducao
 
 routes.get('/DadosSanitario', DadosSanitarioController.index);
 routes.post('/DadosSanitario', DadosSanitarioController.store);
+routes.delete('/DadosSanitatiosDelete/:id', DadosSanitarioController.deleteSanitarioById);
 
 
 module.exports = routes;
